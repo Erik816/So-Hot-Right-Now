@@ -123,11 +123,9 @@ function twitterTitles(apiUrl, size) {
 }
 
 var path = window.location.pathname;
-console.log(path);
 
 if (path == "/") {
-  console.log("if statement running");
-  //Highlight most viewed articles 1-20, 21-40, and 41-60
+  //Highlight most viewed articles 1-20, 21-40, and 41-60 on home page
   mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#16C5B9");
   mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?offset=20&api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#00BAAC");
   mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?offset=40&api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#008177");
@@ -135,11 +133,9 @@ if (path == "/") {
   //Run twitter function on home page
   twitterIds("http://api.nytimes.com/svc/mostpopular/v2/mostshared/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 10);
 } else {
-  console.log("else statement running");
-
+  //Run on section pages
   path = path.split("/");
   var section = path[2];
-  console.log(section);
 
   var url = ("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/" + section + "/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774")
   twitterTitles("http://api.nytimes.com/svc/mostpopular/v2/mostshared/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 10);
