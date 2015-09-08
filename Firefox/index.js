@@ -4,10 +4,11 @@ var self= require('sdk/self');
 
 pageMod.PageMod ({
   include: "http://www.nytimes.com/*",
-  contentScriptFile: ["./contentscript.js",
-                      "./jquery-1.11.3.min.js"],
+  contentScriptFile: [self.data.url("contentscript.js"),
+                      self.data.url("jquery-1.11.3.min.js")],
   attachTo: ['existing', 'top'],
+  contentScriptWhen: 'ready',
   contentScriptOptions: {
-    pngUrl: self.data.url("hot_big.png");
+    pngUrl: self.data.url("hot_big.png")
   }
 });

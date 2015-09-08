@@ -102,7 +102,7 @@ function twitterTitles(apiUrl, size) {
     if (twitter.readyState == 4) {
       var resp = JSON.parse(twitter.responseText);
 
-      var imgURL = var imgURL = self.options.pngUrl;
+      var imgURL = self.options.pngUrl;
       var twitterTitle = [];
 
       //Iterate through results and add top 5 titles to twitterTitle
@@ -126,6 +126,7 @@ var path = window.location.pathname;
 console.log(path);
 
 if (path == "/") {
+  console.log("if statement running");
   //Highlight most viewed articles 1-20, 21-40, and 41-60
   mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#16C5B9");
   mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?offset=20&api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#00BAAC");
@@ -134,6 +135,7 @@ if (path == "/") {
   //Run twitter function on home page
   twitterIds("http://api.nytimes.com/svc/mostpopular/v2/mostshared/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 10);
 } else {
+  console.log("else statement running");
 
   path = path.split("/");
   var section = path[2];
