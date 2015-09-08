@@ -5,7 +5,7 @@ var self= require('sdk/self');
 pageMod.PageMod ({
   include: "http://www.nytimes.com/*",
   contentScriptFile: [self.data.url("contentscript.js"),
-                      self.data.url("jquery-1.11.3.min.js")],
+                      self.data.url("jquery-2.1.4.min.js")],
   attachTo: ['existing', 'top'],
   contentScriptWhen: 'ready',
   contentScriptOptions: {
