@@ -72,7 +72,7 @@ function twitterIds(apiUrl) {
     if (twitter.readyState == 4) {
       var resp = JSON.parse(twitter.responseText);
 
-      var imgURL = chrome.extension.getURL("images/hot_big.png");
+      var imgURL = self.options.pngUrl;
       var twitterId = [];
 
       //Iterate through results and add top 5 asset_ids to twitterId
@@ -101,7 +101,8 @@ function twitterTitles(apiUrl, size) {
   twitter.onreadystatechange = function() {
     if (twitter.readyState == 4) {
       var resp = JSON.parse(twitter.responseText);
-      var imgURL = chrome.extension.getURL("images/hot_big.png");
+
+      var imgURL = var imgURL = self.options.pngUrl;
       var twitterTitle = [];
 
       //Iterate through results and add top 5 titles to twitterTitle
