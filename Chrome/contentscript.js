@@ -126,20 +126,20 @@ console.log(path);
 
 if (path == "/") {
   //Highlight most viewed articles 1-20, 21-40, and 41-60
-  mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#16C5B9");
-  mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?offset=20&api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#00BAAC");
-  mostViewedIds("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?offset=40&api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 20, "#008177");
+  mostViewedIds("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?api-key=3f77de5b309141098ed80402de9d2df7", 20, "#16C5B9");
+  mostViewedIds("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?offset=20&api-key=3f77de5b309141098ed80402de9d2df7", 20, "#00BAAC");
+  mostViewedIds("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?offset=40&api-key=3f77de5b309141098ed80402de9d2df7", 20, "#008177");
 
   //Run twitter function on home page
-  twitterIds("http://api.nytimes.com/svc/mostpopular/v2/mostshared/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 10);
+  twitterIds("https://api.nytimes.com/svc/mostpopular/v2/mostshared/all-sections/1.json?api-key=3f77de5b309141098ed80402de9d2df7", 10);
 } else {
 
   path = path.split("/");
   var section = path[2];
   console.log(section);
 
-  var url = ("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/" + section + "/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774")
-  twitterTitles("http://api.nytimes.com/svc/mostpopular/v2/mostshared/all-sections/1.json?api-key=cd0fad54985368daccdef1d576ce197a%3A3%3A64947774", 10);
+  var url = ("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/" + section + "/1.json?api-key=3f77de5b309141098ed80402de9d2df7")
+  twitterTitles("https://api.nytimes.com/svc/mostpopular/v2/mostshared/all-sections/1.json?api-key=3f77de5b309141098ed80402de9d2df7", 10);
 
   mostViewedTitles(url, 10, "#16C5B9");
 }

@@ -21,12 +21,14 @@
     },
     "permissions": [
         "tabs", "http://www.nytimes.com/*",
+        "https://www.nytimes.com/*",
         "http://api.nytimes.com/*",
+        "https://api.nytimes.com/*",
         "webNavigation"
     ],
     "content_scripts": [
       {
-        "matches": ["http://www.nytimes.com/*"],
+        "matches": ["https://www.nytimes.com/*"],
         "js": ["jquery-1.11.3.min.js", "contentscript.js"]
       }
     ],
